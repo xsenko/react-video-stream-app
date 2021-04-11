@@ -1,5 +1,10 @@
 import { combineReducers } from "redux";
+import { reducer as formReducer } from 'redux-form';
+
+import authReducer from "./authReducer";
 
 export default combineReducers({
-    replaceme: () => 1
-})
+    auth: authReducer,
+    form: formReducer
+});
+
