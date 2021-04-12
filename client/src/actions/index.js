@@ -1,4 +1,5 @@
 import streams from "../apis/streams";
+import history from "../history";
 import { SIGN_IN, SIGN_OUT, CREATE_STREAM, FETCH_STREAMS, FETCH_STREAM, EDIT_STREAM, DELETE_STREAM } from "./types";
 
 export const signIn = (userId) => {
@@ -15,9 +16,12 @@ export const signOut = () => {
 };
 
 export const createStream = (formValues) => {
-    return async (dispatch) => {
-        const response = await streams.post('/streams', formValues);
+    return async (dispatch, getState) => {
+        const { userId } = getState().auth;
+        const response = await streams.post('/streams', { ...formValues, userId });
         dispatch({ type: CREATE_STREAM, payload: response.data })
+        // here we want navigation to root route (list view)
+        history.push('/')
     }
 }
 
