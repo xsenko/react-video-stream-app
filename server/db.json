@@ -1,0 +1,27 @@
+{
+  "streams": [
+    {
+      "title": "deneme",
+      "description": "deneme 123",
+      "id": 1
+    },
+    {
+      "title": "I created this stream",
+      "description": "this was by me",
+      "userId": "112901284267073684956",
+      "id": 2
+    },
+    {
+      "title": "new title",
+      "description": "new description",
+      "userId": "112901284267073684956",
+      "id": 3
+    },
+    {
+      "title": "my Stream",
+      "description": "asdasd",
+      "userId": "112901284267073684956",
+      "id": 4
+    }
+  ]
+}
